@@ -142,20 +142,13 @@ function App() {
     <main className="app">
       {/* heading */}
       <h1 className="heading">To-Do List</h1>
-      <p className="heading__credit">
-        Made with{" "}
-        <span role="img" aria-label="love">
-          💜
-        </span>{" "}
-        by{" "}
-        <a href="https://abubakersaeed.com" target="_blank">
-          Abubaker Saeed
-        </a>
-      </p>
+      <h3 className="heading__credit">
+        <br />A simple To-Do list to keep track of your daily tasks
+      </h3>
 
       {/* form */}
       <div className="form-container">
-        <p className="form-label">What to-do, today!</p>
+        <p className="form-label">Add tasks to your to-do list</p>
         <form onSubmit={(e) => handleSubmit(e)} className="form">
           <input
             type="text"
@@ -174,7 +167,8 @@ function App() {
       {/* tasks */}
       <ul>
         {tasks.length < 1 ? (
-          <p className="task-msg">As of yet, no task ...add one now?</p>
+          <p className="task-msg">No tasks for today 😃<br />
+          <br />Add some tasks to get started...</p>
         ) : (
           tasks.map((item) => (
             <li key={item.id} className="task">
@@ -216,7 +210,7 @@ function App() {
       {/* info */}
       <div className="info">
         <p>
-          Total Task(s): <strong>{tasks.length}</strong>
+          Total tasks : <strong>{tasks.length}</strong>
         </p>
       </div>
     </main>
